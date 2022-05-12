@@ -1,0 +1,13 @@
+:root {
+    --main-color: #d4a656;
+    --secondary-color: black;
+    --main-font: 'Cinzel Decorative', cursive;
+    --decorative-font: 'Noto Sans Egyptian Hieroglyphs', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
