@@ -9,5 +9,141 @@
     margin: 0;
     padding: 0;
     background-color: var(--secondary-color);
+}
+
+/* header */
+
+header {
+    text-align: center;
     color: var(--main-color);
+}
+
+.name-title {
+    font-size: 100px;
+    font-family: var(--main-font);
+    font-weight: bold;
+    padding-top: 12px;
+    position: static;
+    border: 3px solid var(--main-color);
+    margin-top: 20px;
+}
+
+.name-title a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.hiero1 {
+    font-size: 113px;
+}
+
+.hiero2 {
+    font-size: 113px;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0px 250px;
+}
+
+header nav ul li {
+    margin-top: 1px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 20px;
+    color: var(--main-color);
+}
+
+header nav ul li a:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+/* tabloid */
+
+.tabloid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 500px 500px;
+}
+
+/* about */
+
+#about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 2px solid var(--main-color);
+    margin-top: 0;
+}
+
+#about-text {
+    text-align: center;
+    padding: 20px 20px;
+    color: var(--main-color);
+}
+
+#about-image img {
+    width: 80%;
+    height: 80%;
+    padding-top: 7%;
+    padding-left: 7%;
+}
+
+#about p {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+/* work */
+
+
+/* contact me */
+
+
+
+h2 {
+    font-size: 30px;
+}
+
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    padding: 10px;
+}
+
+footer h2 {
+    background-color: var(--main-color);
+    padding-top: 4px;
+}
+
+footer img {
+    background-color: var(--main-color);
+}
+
+footer img {
+    height: 60px;
+}
+
+#copyrights {
+    background-color: var(--main-color);
+    font-size: 25px;
+    padding-top: 10px;
 }
