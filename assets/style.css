@@ -109,10 +109,24 @@ header nav ul li a:hover {
 
 /* work */
 
+#work {
+    border: 2px solid var(--main-color);
+}
+
 
 /* contact me */
 
+#contact {
+    color: var(--main-color);
+}
 
+option {
+    color: var(--main-color);
+}
+
+select {
+    color: var(--main-color);
+}
 
 h2 {
     font-size: 30px;
