@@ -1,8 +1,9 @@
 :root {
-    --main-color: #d4a656;
-    --secondary-color: black;
-    --main-font: 'Cinzel Decorative', cursive;
-    --decorative-font: 'Noto Sans Egyptian Hieroglyphs', sans-serif;
+    --main-color: #000000;
+    --light-main: #595958;
+    --secondary-color: rgb(255, 255, 255);
+    --main-font: font-family: 'Raleway', sans-serif;
+    --input-color: rgba(255, 255, 255, .80)
 }
 
 * {
@@ -11,6 +12,7 @@
     background-color: var(--secondary-color);
 }
 
+/*CSS follows order of HTML for easier access and finding*/
 /* header */
 
 header {
@@ -23,6 +25,7 @@ header {
     font-family: var(--main-font);
     font-weight: bold;
     padding-top: 12px;
+    padding-bottom: 12px;
     position: static;
     border: 3px solid var(--main-color);
     margin-top: 20px;
@@ -63,8 +66,11 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    padding: 20px;
+    margin: 1px;
+    padding: 10px;
     color: var(--main-color);
+    font-family: var(--main-font);
+    border-radius: 7px;
 }
 
 header nav ul li a:hover {
@@ -87,6 +93,7 @@ header nav ul li a:hover {
     grid-template-columns: 50% 50%;
     border: 2px solid var(--main-color);
     margin-top: 0;
+    font-family: var(--main-font);
 }
 
 #about-text {
@@ -113,23 +120,101 @@ header nav ul li a:hover {
     border: 2px solid var(--main-color);
 }
 
-
 /* contact me */
 
 #contact {
     color: var(--main-color);
+    font-family: var(--main-font);
 }
 
-option {
+#contact h2 {
+    text-align: center;
+    font-size: 45px;
+    padding-bottom: 25px;
+    text-decoration: underline;
+}
+
+#contact-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.contact-info {
+    padding-left: 15%;
+    line-height: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+address {
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+address a {
     color: var(--main-color);
+}
+
+address a:checked {
+    color: var(--main-color);
+}
+
+/* form-content */
+
+.contact-form {
+    background-color: var(--main-color);
+    padding: 20px;
+    color: var(--secondary-color);
+    border: 3px solid var(--main-color);
+    width: 80%;
+    border-radius: 15px;
+}
+
+form {
+    background-color: var(--main-color);
+}
+
+.contact-form h3 {
+    background-color: var(--main-color);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+label {
+    background-color: var(--main-color);
+    font-size: 20px;
+    line-height: 30px;
+}
+
+input {
+    background-color: var(--input-color);
+    border-radius: 3px;
+    border: none;
+}
+
+
+textarea {
+    background-color: var(--input-color);
 }
 
 select {
-    color: var(--main-color);
+    background-color: var(--input-color);
 }
 
-h2 {
-    font-size: 30px;
+button {
+    background-color: var(--input-color);
+    padding: 9px;
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+option {
+    background-color: var(--input-color);
 }
 
 
@@ -141,6 +226,7 @@ footer {
     background-color: var(--main-color);
     color: var(--secondary-color);
     padding: 10px;
+    font-family: var(--main-font);
 }
 
 footer h2 {
