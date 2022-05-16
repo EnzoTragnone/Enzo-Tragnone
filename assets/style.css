@@ -1,7 +1,7 @@
 :root {
     --main-color: #000000;
     --light-main: #595958;
-    --secondary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(227, 227, 227);
     --main-font: font-family: 'Raleway', sans-serif;
     --input-color: rgba(255, 255, 255, .80)
 }
@@ -16,29 +16,36 @@
 /* header */
 
 header {
-    text-align: center;
-    color: var(--main-color);
-}
-
-.name-title {
-    font-size: 100px;
-    font-family: var(--main-font);
-    font-weight: bold;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    position: static;
-    border: 3px solid var(--main-color);
-    margin-top: 20px;
-}
-
-.name-title a {
-    text-decoration: none;
     color: var(--main-color);
 }
 
 .title {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
+    text-align: center;
+    margin-top: 20px;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -webkit-animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+.title a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 100px;
+    border: 5px solid var(--main-color);
+    padding: 5px;
 }
 
 .hiero1 {
@@ -65,17 +72,39 @@ header nav ul li {
 }
 
 header nav ul li a {
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
     text-decoration: none;
-    margin: 1px;
-    padding: 10px;
     color: var(--main-color);
-    font-family: var(--main-font);
-    border-radius: 7px;
+    padding: 5px 0px;
+    margin: 0px 5px;
+    display: inline-block;
+    position: relative;
+}
+
+header nav ul li a:checked {
+    color: var(--main-color);
+}
+
+header nav ul li a::before {
+    transition: 400ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 0%;
+    bottom: 5px;
+
+}
+
+header nav ul li a:hover::before {
+    width: 100%;
+
 }
 
 header nav ul li a:hover {
-    background-color: var(--main-color);
-    color: var(--secondary-color);
+    opacity: 1;
 }
 
 /* tabloid */
@@ -83,7 +112,7 @@ header nav ul li a:hover {
 .tabloid {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 500px 500px 500px;
+    margin-bottom: 10px;
 }
 
 /* about */
@@ -91,7 +120,7 @@ header nav ul li a:hover {
 #about {
     display: grid;
     grid-template-columns: 50% 50%;
-    border: 2px solid var(--main-color);
+    border-top: 2px solid var(--main-color);
     margin-top: 0;
     font-family: var(--main-font);
 }
@@ -102,11 +131,13 @@ header nav ul li a:hover {
     color: var(--main-color);
 }
 
+#about-image {
+    padding: 20px;
+}
+
 #about-image img {
-    width: 80%;
-    height: 80%;
-    padding-top: 7%;
-    padding-left: 7%;
+    width: 100%;
+    height: 100%;
 }
 
 #about p {
@@ -117,7 +148,7 @@ header nav ul li a:hover {
 /* work */
 
 #work {
-    border: 2px solid var(--main-color);
+    border-top: 2px solid var(--main-color);
 }
 
 /* contact me */
@@ -125,6 +156,9 @@ header nav ul li a:hover {
 #contact {
     color: var(--main-color);
     font-family: var(--main-font);
+    background-image: url(./Images/contactphone.jpg);
+    background-size: cover;
+    background-position: 333px;
 }
 
 #contact h2 {
@@ -132,29 +166,49 @@ header nav ul li a:hover {
     font-size: 45px;
     padding-bottom: 25px;
     text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #contact-grid {
     display: grid;
     grid-template-columns: 50% 50%;
+    background-color: rgba(255, 255, 255, 0);
+
 }
 
 .contact-info {
     padding-left: 15%;
     line-height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#contact h3 {
+    padding-top: 10px;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 35px;
+    background-color: rgba(255, 255, 255, 0);
+
 }
 
 address {
-    font-size: 20px;
+    font-size: 30px;
     padding-top: 30px;
+    font-weight: 100;
+    line-height: 60px;
+    background-color: rgba(255, 255, 255, 0);
+    margin-bottom: 200px;
 }
 
 address a {
     color: var(--main-color);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+address a:hover {
+    font-weight: bold;
+
 }
 
 address a:checked {
@@ -164,59 +218,128 @@ address a:checked {
 /* form-content */
 
 .contact-form {
-    background-color: var(--main-color);
-    padding: 20px;
+    padding: 0;
     color: var(--secondary-color);
     border: 3px solid var(--main-color);
     width: 80%;
     border-radius: 15px;
+    background-image: url(./Images/written.jpg);
+    background-size: cover;
+    margin-bottom: 70px;
 }
 
 form {
-    background-color: var(--main-color);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .contact-form h3 {
-    background-color: var(--main-color);
     text-align: center;
     padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    padding-top: 10px;
+    color: var(--main-color);
 }
 
+
 label {
-    background-color: var(--main-color);
-    font-size: 20px;
-    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 25px;
+    line-height: 50px;
+    margin-left: 20px;
+    color: var(--secondary-color);
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 4px;
 }
 
 input {
-    background-color: var(--input-color);
-    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    height: 25px;
     border: none;
+    font-size: 25px;
+    color: var(--secondary-color);
+    height: 30px;
+    padding: 4px;
+    width: 60%;
+    font-family: var(--main-font);
+}
+
+input:hover,
+input:focus {
+    background-color: var(--light-main);
+}
+
+input::placeholder {
+    color: var(--secondary-color);
+    font-family: var(--main-font);
 }
 
 
 textarea {
-    background-color: var(--input-color);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--secondary-color);
+    font-size: 25px;
+    font-family: var(--main-font);
+    border-radius: 5px;
+    padding: 4px;
+    margin-left: 20px;
+    display: block;
+    height: 125px;
+}
+
+textarea:hover,
+textarea:focus,
+textarea:active {
+    background-color: var(--light-main);
+}
+
+textarea::placeholder {
+    color: var(--secondary-color);
+    padding-top: 3px;
 }
 
 select {
-    background-color: var(--input-color);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--secondary-color);
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 4px;
+
+    border: 1px solid var(--main-color);
+    font-family: var(--main-font);
 }
 
-button {
-    background-color: var(--input-color);
-    padding: 9px;
-    color: var(--secondary-color);
-    font-size: 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
+select:hover {
+    background-color: var(--light-main);
+}
+
+.buttons {
+    margin-left: 500px;
+    background-color: rgba(0, 0, 0, 0);
+
 }
 
 option {
-    background-color: var(--input-color);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--secondary-color);
 }
 
+button {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 9px;
+    color: var(--secondary-color);
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: var(--light-main);
+}
 
 /* footer */
 
@@ -231,7 +354,9 @@ footer {
 
 footer h2 {
     background-color: var(--main-color);
-    padding-top: 4px;
+    padding-top: 15px;
+    font-weight: normal;
+    font-size: 25px;
 }
 
 footer img {
@@ -245,5 +370,5 @@ footer img {
 #copyrights {
     background-color: var(--main-color);
     font-size: 25px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
