@@ -6,7 +6,6 @@
     --lines: rgb(100, 100, 100);
     --light-blue: rgb(116, 196, 250);
     --secondary-color: rgb(31, 31, 31);
-    --input-color: rgba(255, 255, 255, .80)
 }
 
 * {
@@ -22,7 +21,10 @@
 header {
     color: var(--main-color);
     font-family: 'Courier New', Courier, monospace;
+    width: 100%;
 }
+
+/* title and title animations starts */
 
 .title {
     text-align: center;
@@ -65,13 +67,8 @@ header {
     }
 }
 
-.hiero1 {
-    font-size: 113px;
-}
-
-.hiero2 {
-    font-size: 113px;
-}
+/* title and title animations ends */
+/* header nav starts */
 
 header nav ul {
     display: flex;
@@ -129,15 +126,8 @@ header nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* tabloid */
-
-.tabloid {
-    display: grid;
-    grid-template-columns: 100%;
-    margin-bottom: 10px;
-}
-
-/* about */
+/* header nav ends */
+/* about starts */
 
 #about {
     display: flex;
@@ -174,18 +164,16 @@ h2 {
     max-width: 50%;
 }
 
-
 #about-image {
     padding: 20px;
 }
 
 #about-image img {
-    max-width: 900px;
-    max-height: 800px;
-    min-width: none;
-    min-height: none;
-    box-shadow: 5px 5px 10px var(--lines);
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 5px 5px 10px black;
 }
+
 
 #story {
     font-size: 23px;
@@ -202,12 +190,14 @@ h2 {
     font-weight: bold;
 }
 
+/* about ends */
 /* work */
 
 #work {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    width: auto;
     border-top: 3px solid var(--string);
 }
 
@@ -229,12 +219,15 @@ h2 {
     transform: scale(1.1);
 }
 
+/* run-buddy */
+
 #run-buddy {
     background-color: var(--secondary-color);
     transition: all .4s ease-in-out;
     filter: grayscale();
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 #run-buddy:hover {
@@ -247,6 +240,7 @@ h2 {
     background-color: var(--secondary-color);
     transition: all .4s ease-in-out;
     border: 10px solid var(--secondary-color);
+    width: auto;
 }
 
 .run-content:hover {
@@ -266,8 +260,11 @@ h2 {
     color: var(--main-color);
 }
 
-#run-buddy img {
+#run-buddy a img {
     position: relative;
+    width: 100%;
+    height: 100%;
+    position: cover;
 }
 
 .tag-big {
@@ -290,6 +287,8 @@ h2 {
     font-weight: bold;
     background-color: var(--dark-blue);
 }
+
+/* run-buddy */
 
 .mozaic {
     display: flex;
@@ -333,8 +332,8 @@ h2 {
 }
 
 .generic img {
-    height: 500px;
-    width: 600px;
+    height: 100%;
+    width: 100%;
     transition: all .4s ease-in-out;
     border: 5px solid var(--light-main);
     background-color: var(--secondary-color);
@@ -358,7 +357,7 @@ h2 {
     background-color: #c58d24;
 }
 
-
+/* work ends */
 /* contact me */
 
 #contact {
@@ -366,20 +365,16 @@ h2 {
     font-family: var(--main-font);
     background-image: url(./Images/pexels-pixabay-206901.jpg);
     background-size: cover;
-}
-
-#contact-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    background-color: rgba(255, 255, 255, 0);
-    padding-top: 60px;
-
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 50px;
 }
 
 .contact-info {
-    padding-left: 15%;
     line-height: 30px;
     background-color: rgba(255, 255, 255, 0);
+    width: 49%;
 }
 
 #contact h3 {
@@ -419,11 +414,10 @@ address a:checked {
     padding: 0;
     color: var(--main-color);
     border: 3px solid var(--secondary-color);
-    width: 80%;
+    width: 50%;
     border-radius: 15px;
     background-image: url(./Images/written.jpg);
     background-size: cover;
-    margin-bottom: 70px;
 }
 
 form {
@@ -449,13 +443,6 @@ label {
     border-radius: 5px;
     padding: 4px;
     transition: all .4s ease-in-out;
-}
-
-label:hover,
-label:focus {
-    color: var(--light-blue);
-    transition: all .4s ease-in-out;
-    transform: scale(1.1);
 }
 
 input {
@@ -562,6 +549,7 @@ button:hover {
 
 }
 
+/* contact me ends */
 /* footer */
 
 footer {
@@ -597,15 +585,156 @@ footer img {
     color: var(--light-blue);
 }
 
-@media screen and (max-width: 980px) {
+/* footer ends */
+/* media query starts */
 
-    /* kjabsfl */
+@media screen and (max-width: 980px) {
+    .title a {
+        font-size: 80px;
+    }
+
+    #about-text h2 {
+        font-size: 35px;
+    }
+
+    #about-text {
+        max-width: none;
+        padding: 20px;
+    }
+
+    #run-buddy {
+        filter: none;
+    }
+
+    #run-buddy img {
+        height: auto;
+        filter: none;
+        position: relative;
+    }
+
+    #run-buddy a h4 {
+        font-size: 25px;
+    }
+
+    #run-buddy a p {
+        font-size: 20px;
+    }
+
+    .mozaic {
+        justify-items: center;
+    }
+
+    .generic {
+        filter: none;
+        width: 50%;
+    }
+
+    .tag {
+        display: none;
+    }
+
+    #contact {
+        justify-items: center;
+    }
+
+    .contact-info {
+        width: auto;
+        padding-left: 70px;
+        margin-bottom: 0;
+    }
+
+    .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        margin-left: 60%;
+    }
+
+    .contact-form input:hover,
+    .contact-form textarea:hover,
+    .contact-form select:hover {
+        transform: none;
+    }
 }
 
 @media screen and (max-width:768px) {
-    /* ljakshdjlas */
+
+    .title a {
+        font-size: 60px;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+    }
+
+    #work {
+        border: none;
+    }
+
+    .run-content {
+        border: none;
+        padding: 5px;
+    }
+
+    .tag-big {
+        display: none;
+    }
+
+    .generic img {
+        border: none;
+    }
+
+    .buttons {
+        margin-left: 50%;
+    }
 }
 
 @media screen and (max-width:575px) {
-    /* khjasgbdkhjas */
+
+    .title a {
+        font-size: 50px;
+    }
+
+    header nav ul {
+        justify-items: center;
+    }
+
+    header nav ul li a {
+        font-size: 30px;
+    }
+
+    .contact-info {
+        padding-left: 0;
+    }
+
+    address a {
+        font-size: 25px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    input {
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    .buttons {
+        margin-left: 35%;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer h2 {
+        width: 100%;
+        text-align: center;
+    }
+
 }
+
+/* made with love and a ton of effort */
