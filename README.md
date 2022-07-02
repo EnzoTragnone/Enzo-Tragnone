@@ -7,3 +7,5 @@ all third party images used in these documents are free of copyrights and are fr
 In the main folder Portifolio you will find this README file along with Index.HTML and SCREENSHOT. the screenshot is of the launched webapge which contains a full view of the website.
 
 the link for the launched and working webpage follows https://enzotragnone.github.io/Enzo-Tragnone
+
+![Alt text](/SCREENSHOT.jpg "title")
